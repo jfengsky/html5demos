@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>canvas测试</title>
+<script type="text/javascript" src="excanvas.js" ></script>
+<script type="text/javascript" src="jCanvaScript.1.5.15.min.js" ></script>
+</head>
+
+<body onload="onload_1('canvas_1');">
+<div style="width:800px">
+				<script type="text/javascript">
+					var interval_1=0;
+					function startShow()
+					{
+						var r = Math.floor(Math.random() * (254)),
+							g = Math.floor(Math.random() * (254)),
+							b = Math.floor(Math.random() * (254)),
+							x = Math.floor(Math.random() * (439)),
+							y = Math.floor(Math.random() * (554)),
+							color = "rgba("+r+", "+g+", "+b+", 0.5)",
+							filled = true,
+							radius = 1;
+						jc.circle(x, y, radius, color, filled)
+							.animate({radius:100, opacity:0}, 1500, function(){
+								this.del();
+							});
+					}
+
+					function onload_1(idCanvas)
+					{
+						jc.start(idCanvas,25);
+						interval_1 = setInterval(startShow, 200);
+					}
+
+					function start_1(idCanvas)
+					{
+						if(interval_1)return;
+						onload_1();
+					}
+
+					function stop_1(idCanvas)
+					{
+						clearInterval(interval_1);
+						interval_1 = 0;
+						jc.clear(idCanvas);
+					}
+				</script>
+				<canvas id="canvas_1" width="800" height="600"></canvas>
+			</div>
+<script type="text/javascript">
+var ie = (function(){ 
+var undef, 
+v = 3, 
+div = document.createElement('div'), 
+all = div.getElementsByTagName('i'); 
+while ( 
+div.innerHTML = '<!--[if gt IE ' + (++v) + ']><i></i><![endif]-->', 
+all[0] 
+); 
+return v > 4 ? v : undef; 
+}()); 
+if(!ie || ie>8)
+alert('请使用IE8.0及以下版本测试效果。');
+</script>
+</body>
+</html>

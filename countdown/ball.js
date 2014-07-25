@@ -2,11 +2,21 @@
  * Created by jiangfeng on 14-7-25.
  */
 
+//var ball = {
+//  x: 512,
+//  y: 100,
+//  r: 20,
+//  g: 2,
+//  vx: -4,
+//  vy: 0,
+//  color: "#f60"
+//}
+
 var ball = {
-  x: 512,
-  y: 100,
+  x: Math.random(1) * 512,
+  y: Math.random(1) * 100,
   r: 20,
-  g: 2,
+  g: Math.random(1) + 2,
   vx: -4,
   vy: 0,
   color: "#f60"
